@@ -6,7 +6,7 @@
 /*   By: ervillca <ervillca@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 00:02:24 by ervillca          #+#    #+#             */
-/*   Updated: 2026/04/28 17:49:15 by ervillca         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:28:09 by ervillca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,23 +87,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (ft_strlen(src));
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
-{
-	unsigned char	*ptr;
-	size_t			total;
-	size_t			i;
-
-	if (size != 0 && nmemb > SIZE_MAX / size)
-		return (NULL);
-	total = nmemb * size;
-	ptr = malloc(total);
-	if (!ptr)
-		return (NULL);
-	i = 0;
-	while (i < total)
-	{
-		ptr[i] = 0;
-		i++;
-	}
-	return (ptr);
-}
+//ELIMINAR CALLOC
