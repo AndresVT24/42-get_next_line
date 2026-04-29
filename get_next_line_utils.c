@@ -57,12 +57,11 @@ int	ft_isfinished(char *string)
 
 	if (!string)
 		return (0);
-
 	i = 0;
 	while (string[i] != '\0')
 	{
 		if (string[i] == '\n')
-			return 1;
+			return (1);
 		i++;
 	}
 	return (0);
