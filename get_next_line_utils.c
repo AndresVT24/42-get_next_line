@@ -6,7 +6,7 @@
 /*   By: ervillca <ervillca@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/26 00:02:24 by ervillca          #+#    #+#             */
-/*   Updated: 2026/04/28 20:28:09 by ervillca         ###   ########.fr       */
+/*   Updated: 2026/04/29 08:48:55 by ervillca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	return (ft_strlen(src));
 }
-
-//ELIMINAR CALLOC

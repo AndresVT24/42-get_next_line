@@ -16,30 +16,6 @@ Cada llamada a `get_next_line` devuelve la siguiente línea disponible del descr
 
 El proyecto trabaja conceptos fundamentales de C como la gestión manual de memoria, el uso de descriptores de archivo, la función `read`, las variables estáticas y la manipulación de strings.
 
-## Archivos del proyecto
-
-### Parte obligatoria
-
-- `get_next_line.c`
-- `get_next_line_utils.c`
-- `get_next_line.h`
-
-### Parte bonus
-
-- `get_next_line_bonus.c`
-- `get_next_line_utils_bonus.c`
-- `get_next_line_bonus.h`
-
-## Funciones autorizadas
-
-En este proyecto solo se permite usar:
-
-- `read`
-- `malloc`
-- `free`
-
-No está permitido usar `libft`, `lseek` ni variables globales.
-
 ## Instrucciones
 
 ### Compilación
@@ -132,49 +108,6 @@ Llamadas sucesivas a `get_next_line(fd)` devolverían:
 NULL
 ```
 
-## Explicación del algoritmo
-
-El problema principal de `get_next_line` es que `read` no lee líneas completas, sino bloques de bytes. Por eso, la función necesita guardar temporalmente el contenido leído que todavía no ha sido devuelto.
-
-Para resolverlo, se utiliza una variable estática.
-
-Una variable estática mantiene su valor entre llamadas a la función. Esto permite conservar el texto sobrante después de encontrar un salto de línea.
-
-El algoritmo general es:
-
-1. Comprobar que el descriptor de archivo es válido y que `BUFFER_SIZE` es mayor que 0.
-2. Leer del descriptor usando `read` en bloques de tamaño `BUFFER_SIZE`.
-3. Ir acumulando el contenido leído en una cadena auxiliar.
-4. Parar la lectura cuando se encuentra un salto de línea, cuando `read` devuelve 0 o cuando `read` devuelve -1.
-5. Extraer la línea que debe devolverse.
-6. Guardar en la variable estática el contenido sobrante después del salto de línea.
-7. Liberar la memoria que ya no sea necesaria.
-8. Devolver la línea obtenida o `NULL` si no hay nada que devolver.
-
-### Justificación del algoritmo
-
-Este enfoque permite leer solo lo necesario en cada llamada. Si durante la lectura se encuentra un `\n`, la función deja de leer y devuelve la línea actual sin procesar el archivo completo.
-
-Esto es importante porque el proyecto exige que `get_next_line` no lea todo el archivo de golpe. La función debe comportarse correctamente tanto con `BUFFER_SIZE` pequeño, como `1`, como con valores más grandes.
-
-La variable estática es necesaria porque puede ocurrir que una llamada a `read` lea más información de la que pertenece a la línea actual. Por ejemplo, con un `BUFFER_SIZE` grande, se pueden leer varias líneas en una sola llamada. En ese caso, la primera línea se devuelve y el resto se guarda para futuras llamadas.
-
-## Casos importantes a probar
-
-Algunos casos útiles para verificar el funcionamiento del proyecto son:
-
-- Archivo vacío.
-- Archivo con una sola línea.
-- Archivo con varias líneas.
-- Archivo sin salto de línea final.
-- Archivo que solo contiene saltos de línea.
-- `BUFFER_SIZE=1`.
-- `BUFFER_SIZE=42`.
-- `BUFFER_SIZE` muy grande.
-- Lectura desde `stdin`.
-- Descriptor de archivo inválido.
-- Varias llamadas seguidas después de llegar a `NULL`.
-
 ## Bonus
 
 La parte bonus añade soporte para múltiples descriptores de archivo al mismo tiempo.
@@ -223,6 +156,6 @@ Cualquier ayuda externa debe usarse de forma responsable, asegurando que el cód
 
 Proyecto realizado por:
 
-`<tu_login>`
+`<ervillca>`
 
 42 Barcelona.
