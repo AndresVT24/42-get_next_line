@@ -90,7 +90,7 @@ char	*get_next_line(int fd)
 	static char	*stash[OPEN_MAX];
 	char		*line;
 
-    if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd >= OPEN_MAX)
 		return (NULL);
 	stash[fd] = ft_read_stash(fd, stash[fd]);
 	if (!stash[fd])
