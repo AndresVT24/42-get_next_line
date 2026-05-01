@@ -6,27 +6,30 @@
 /*   By: ervillca <ervillca@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 20:23:28 by ervillca          #+#    #+#             */
-/*   Updated: 2026/04/29 20:40:04 by ervillca         ###   ########.fr       */
+/*   Updated: 2026/05/01 16:29:18 by ervillca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "get_next_line.h"
+#include "../get_next_line.h"
 
 int	main(void)
 {
 	char	*line;
-	int		i;
+	int		n;
 
-	i = 1;
-	line = get_next_line(0);
-	while (line != NULL)
+	n = 1;
+	while (1)
 	{
-		printf("linea %d: [%s]", i, line);
-		free(line);
-		i++;
 		line = get_next_line(0);
+		if (!line)
+			break ;
+		printf("Linea %d: %s", n, line);
+		if (line[0] && line[ft_strlen(line) - 1] != '\n')
+			printf("\n");
+		free(line);
+		n++;
 	}
 	return (0);
 }
