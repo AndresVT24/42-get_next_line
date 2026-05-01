@@ -6,7 +6,7 @@
 /*   By: ervillca <ervillca@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 14:44:05 by ervillca          #+#    #+#             */
-/*   Updated: 2026/05/01 16:22:21 by ervillca         ###   ########.fr       */
+/*   Updated: 2026/05/01 17:41:40 by ervillca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "../get_next_line_bonus.h"
+#include "get_next_line_bonus.h"
 
 static void	print_line(char *label, char *line)
 {

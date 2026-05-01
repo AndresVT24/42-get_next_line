@@ -6,13 +6,13 @@
 /*   By: ervillca <ervillca@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 20:23:28 by ervillca          #+#    #+#             */
-/*   Updated: 2026/05/01 16:29:18 by ervillca         ###   ########.fr       */
+/*   Updated: 2026/05/01 17:41:51 by ervillca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../get_next_line.h"
+#include "get_next_line.h"
 
 int	main(void)
 {
